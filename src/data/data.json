@@ -1,0 +1,42 @@
+ "db":{
+      "prototypes":{
+     "1": {
+       "name": "Digital Employee Management",
+       "description": "Enabling rapid communication and management of our floor employees. Cut down on paperwork, decrease management oversight needs, and communicate with employees via their preferred method (digital).",
+       "userstory": "You're the general manager of our Seattle store. Tomorrow starts our yearly sale, the biggest day of the year for us. You have a need to shuffle a few shifts around for your employees, but only a few minutes to alert those affected of their new shifts. Go ahead and jump and and look send an update to Jennifer and Steve.",
+       "feedback": "[]"
+     },
+     "2": {
+       "name": "xxx",
+       "description": "xxx",
+       "userstory": "xxx",
+       "feedback": "[]"
+     }
+   },
+   "users":{
+     "1":{
+       "name": "Carrie Fischer",
+       "position": "VP of Hope",
+       "admin": "false",
+       "email": "cfischer@rebellion.com",
+       "img": "https://am22.akamaized.net/tms/cnt/uploads/2017/08/leiatop1-650x574.jpg",
+       "prototype": "1"
+     },
+     "2":{
+       "name": "David Bowie",
+       "position": "Chief Dance Officer",
+       "admin": "false",
+       "email": "spaceOddity@dancewith.us",
+       "img": "https://i1.wp.com/ajournalofmusicalthings.com/wp-content/uploads/2016/11/David-Bowie-Aladdin-Sane.jpg?fit=1520%2C855",
+       "prototype": "2"
+     },
+     "3":{
+       "name": "Stanley Nicholl",
+       "position": "Chief Dreamer",
+       "admin": "true",
+       "email": "admin@admin.com",
+       "img": "https://pbs.twimg.com/profile_images/946922122873466881/TPHaBLxH_400x400.jpg",
+       "prototype": "null"
+     }
+  }
+}

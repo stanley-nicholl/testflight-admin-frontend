@@ -1,0 +1,46 @@
+
+
+@mixin tabs {
+  @for $i from 1 through 3 {
+    &:nth-of-type(#{$i}) {
+      &:checked {
+        ~.slide {
+          left: calc((100% / 3) * #{$i - 1})
+        }
+      }
+    }
+  }
+}
+
+input[type="radio"][name="tabs"] {
+  position: absolute;
+  z-index: -1;
+  &:checked {
+    +.tab-label-content {
+      label {
+        color: #FFF;
+      }
+      .tab-content {
+        display: block;
+      }
+    }
+  }
+  @include tabs;
+  &:first-of-type {
+    &:checked {
+      ~.slide {
+        left: 0;
+      }
+    }
+  }
+}
+
+.slide {
+  background: #25324F;
+  width: calc(100% / 3);
+  height: 4px;
+  position: absolute;
+  left: 0;
+  top: calc(100% - 4px);
+  transition: left 0.3s ease-out;
+}

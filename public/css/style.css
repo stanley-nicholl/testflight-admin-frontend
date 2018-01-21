@@ -1,0 +1,174 @@
+/*
+NAVY BLUE: #25324F
+RED: #FF1654
+GREY: #DEDEDE
+WHITE: #FFF
+
+*/
+
+body {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, p, small, a, span {
+  font-family: 'Oswald', sans-serif;
+}
+
+/* HEADER HEADER - START */
+
+.header {
+  background-color: #25324F;
+}
+
+.header-branding {
+  width: 80%;
+}
+
+.logo {
+  max-height: 7rem;
+  width: auto;
+  -webkit-transform: rotate(25deg);
+  -moz-transform: rotate(25deg);
+  -ms-transform: rotate(25deg);
+  transform: rotate(25deg);
+}
+
+/* HEADER HEADER - END */
+
+/* NAVIGATION NAVIGATION - START */
+
+.tab-section {
+  width: 100%;
+  background-color: #FF1654;
+  -webkit-box-shadow: 0px 3px 7px 0px rgba(77, 72, 77, 0.65);
+  -moz-box-shadow: 0px 3px 7px 0px rgba(77, 72, 77, 0.65);
+  box-shadow: 0px 3px 7px 0px rgba(77, 72, 77, 0.65);
+}
+
+.tab-wrap {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+label {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #FF1654;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 56px;
+  transition: color 0.2s ease;
+  width: 100%;
+}
+
+.tab-label-content {
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+/* .tab-label-content.selected {
+  font-weight: bold;
+} */
+
+.nav-underline {
+  position: absolute;
+  top: 95%;
+  width: 32%;
+  height: 5px;
+  background-color: #25324F;
+  z-index: 2;
+}
+
+.nav-underline.selected {
+  background-color: #25324F;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    padding: 40px 0 90px 10%;
+  }
+  .tab-wrap {
+    width: 80%;
+    margin-left: 10%;
+    top: -106px;
+  }
+}
+
+/* see styles.less */
+
+/* NAVIGATION NAVIGATION - END */
+
+/* LAUNCHPAD LAUNCHPAD - START */
+
+.subtitle {
+  color: #FF1654;
+  width: 30%;
+}
+
+.proto-name {
+  color: #25324F;
+  font-size: 1.2rem;
+  width: 30%;
+}
+
+.multi-select {
+  color: #25324F;
+  width: 50%;
+}
+
+.proto-feedback-link {
+  color: #FF1654;
+  width: 20%;
+  font-size: .9rem;
+  text-align: right;
+  text-decoration: underline;
+}
+
+/* LAUNCHPAD LAUNCHPAD - END */
+
+/* TEST PILOTS TEST PILOT - START */
+
+.pilot-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center;
+}
+
+.carrie {
+  background-image: url('https://am22.akamaized.net/tms/cnt/uploads/2017/08/leiatop1-650x574.jpg');
+}
+
+.data-point {
+  color: #25324F;
+  font-size: 1.2rem;
+}
+
+/* TEST PILOTS TEST PILOT - END */
+
+/* DROP DOWN LIST DROP DOWN LIST - START */
+
+/* see react-select.min.css */
+
+/* DROP DOWN LIST DROP DOWN LIST - END */
+
+.page-title {
+  color: #25324F;
+}
+
+.add-button-position {
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
+}
+
+.add-button {
+  background-color: #FF1654;
+}

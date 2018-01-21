@@ -3,9 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "create-react-class": "^15.6.2",
+    "eslint-config-rallycoding": "^3.2.0",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.4.0",
+    "less": "^2.7.3",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
+    "react-collapse": "^4.0.3",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.0"
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.0",
+    "react-select": "^1.2.1",
+    "react-thunk": "^1.0.0",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
