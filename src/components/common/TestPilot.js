@@ -1,15 +1,15 @@
 import React from 'react'
 
-const TestPilot = () => {
+const TestPilot = ({ id, first_name, last_name, title, email, image }) => {
   return (
     <div>
-      <div className='row mb-4 align-items-center'>
+      <div id={`user-${id}`} className='row mb-4 align-items-center'>
         <div className=' col-2'>
-          <div className='carrie pilot-img'></div>
+          <div className='pilot-img' style={{backgroundImage: `url(${image})`}}></div>
         </div>
-        <p className='data-point my-3 col-3'>Carrie Fischer</p>
-        <p className='data-point my-3 col-3'>VP of Hope</p>
-        <p className='data-point my-3 col-3'>cfisch@rebellion.com</p>
+        <p className='title-data-point my-3 col-3'>{`${first_name} ${last_name}`}</p>
+        <p className='data-point my-3 col-3'>{title}</p>
+        <p className='data-point my-3 col-3'>{email}</p>
       </div>
     </div>
   )

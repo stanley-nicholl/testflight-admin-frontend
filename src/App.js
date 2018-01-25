@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import reducers from './reducers'
 import logger from 'redux-logger'
 import thunk from 'react-thunk'
 import TestFlightAdmin from './TestFlightAdmin'
 
-// import reducers from './reducers'
-
-// const store = createStore(
-//   reducers,
-//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-//   applyMiddleware(logger, thunk)
-// )
+const store = createStore(reducers)
 
 class App extends Component {
 
   render() {
     return (
-      <Provider>
+      <Provider store={store}>
         <TestFlightAdmin />
       </Provider>
     );
   }
 }
 
-export default App;
+export default App
+
+// ,
+// window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+// applyMiddleware(logger, thunk)
+// )

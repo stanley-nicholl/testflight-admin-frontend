@@ -8,7 +8,7 @@ const LaunchPadItem = () => {
       <div className='multi-select mr-4'>
         <MultiSelect list={this.list} />
       </div>
-      <p className='proto-feedback-link'>see feedback</p>
+      <p className='proto-feedback-link'>see prototype feedback</p>
     </div>
   )
 }
