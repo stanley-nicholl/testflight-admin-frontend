@@ -15,11 +15,6 @@ const FLAVOURS = [
 const MAX_CONTRIBUTORS = 2;
 const ASYNC_DELAY = 500;
 
-
-const WHY_WOULD_YOU = [
-	{ label: 'Chocolate (are you crazy?)', value: 'chocolate', disabled: true },
-].concat(FLAVOURS.slice(1));
-
 var MultiSelect = createClass({
 	displayName: 'MultiSelect',
 	propTypes: {
@@ -29,7 +24,6 @@ var MultiSelect = createClass({
 		return {
 			removeSelected: true,
 			disabled: false,
-			crazy: false,
 			stayOpen: false,
 			value: [],
 			rtl: false,
@@ -50,8 +44,8 @@ var MultiSelect = createClass({
 	},
 
 	render () {
-		const { crazy, disabled, stayOpen, value } = this.state;
-		const options = crazy ? WHY_WOULD_YOU : FLAVOURS;
+		const { disabled, stayOpen, value } = this.state;
+		const options = FLAVOURS;
 		return (
 			<div className="section">
 				<Select

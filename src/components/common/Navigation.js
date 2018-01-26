@@ -36,22 +36,22 @@ class Navigation extends Component {
 
           <input type="radio" name="tabs" id="tab1" />
           <div className="tab-label-content d-flex flex-column selected" id="tab-1">
-            <Link to='/'>
-              <label id='tab-launchpad' className='mt-3' htmlFor="tab1">LAUNCHPAD</label>
+            <Link to='/launchpad'>
+              <div id='tab-launchpad' className='mt-3 tab-label'>LAUNCHPAD</div>
             </Link>
           </div>
 
           <input type="radio" name="tabs" id="tab2" />
           <div className="tab-label-content d-flex flex-column" id="tab-2">
             <Link to='/testpilots'>
-              <label id='tab-testpilots' className='mt-3' htmlFor="tab2">TEST PILOTS</label>
+              <div id='tab-testpilots' className='mt-3 tab-label'>TEST PILOTS</div>
             </Link>
           </div>
 
           <input type="radio" name="tabs" id="tab3" />
           <div className="tab-label-content d-flex flex-column" id="tab-3">
             <Link to='/prototypes'>
-              <label id='tab-prototypes' className='mt-3' htmlFor="tab3">TEST PROTOTYPES</label>
+              <div id='tab-prototypes' className='mt-3 tab-label'>PROTOTYPES</div>
             </Link>
           </div>
 

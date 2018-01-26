@@ -3,10 +3,12 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import reducers from './reducers'
 import logger from 'redux-logger'
-import thunk from 'react-thunk'
+import thunk from 'redux-thunk'
 import TestFlightAdmin from './TestFlightAdmin'
 
-const store = createStore(reducers)
+const store = createStore(reducers,
+// window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+applyMiddleware(thunk))
 
 class App extends Component {
 
@@ -20,8 +22,3 @@ class App extends Component {
 }
 
 export default App
-
-// ,
-// window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-// applyMiddleware(logger, thunk)
-// )

@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LaunchPad from './components/LaunchPad'
 import TestPilots from './components/TestPilots'
+import AddTestPilot from './components/AddTestPilot'
 import Prototypes from './components/Prototypes'
-import { Navigation, Footer } from './components/common'
+import PrototypeReview from './components/PrototypeReview'
+import AddPrototype from './components/AddPrototype'
+import { Header, Navigation, Footer } from './components/common'
 
 class TestFlightAdmin extends Component {
   state = {
@@ -15,11 +18,15 @@ class TestFlightAdmin extends Component {
   render() {
     return (
       <div>
+        <Header user={'Stan'} />
         <Router>
           <div>
-            <Route exact path='/' component={LaunchPad} />
-            <Route path='/testpilots' component={TestPilots} />
-            <Route path='/prototypes' component={Prototypes} />
+            <Route exact path='/launchpad' component={LaunchPad} />
+            <Route path={`/prototype/review/:id`} component={PrototypeReview} />
+            <Route exact path='/testpilots' component={TestPilots} />
+            <Route exact path='/testpilots/add' component={AddTestPilot} />
+            <Route exact path='/prototypes' component={Prototypes} />
+            <Route exact path='/prototypes/add' component={AddPrototype} />
           </div>
         </Router>
 

@@ -1,9 +1,10 @@
 import React from 'react'
 
-const AddButton = () => {
+const AddButton = ({ tooltip }) => {
   return (
     <div className='add-button-position'>
-      <a className="btn-floating btn-lg add-button"><i className="fa fa-plus"></i></a>
+      <span className='my-tooltip'>{tooltip}</span>
+      <div className="btn-floating btn-lg add-button"><i className="fa fa-plus"></i></div>
     </div>
   )
 }
