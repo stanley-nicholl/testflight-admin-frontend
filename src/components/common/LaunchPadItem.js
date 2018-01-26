@@ -3,7 +3,6 @@ import { MultiSelect } from './MultiSelect'
 import { Link } from 'react-router-dom'
 
 const LaunchPadItem = ({ id, name, key, alignment }) => {
-  console.log(id);
   return (
     <div id={`launchpad-item-${id}`} className='d-flex align-items-center mb-5'>
       <p className='proto-name mr-4 pl-2 pt-2'>{name}</p>

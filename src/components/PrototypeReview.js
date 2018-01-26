@@ -3,38 +3,60 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import { fetchReviews } from '../actions'
-import { Header, Navigation, AddButton } from './common'
+import { Header, Navigation, AddButton, ReviewItem } from './common'
 
 class PrototypeReview extends Component {
+  constructor(props){
+    super(props)
+  }
 
   componentDidMount(){
     const id = window.location.pathname.split('/')[3]
     this.props.fetchReviews(id)
   }
 
+  handleBack(e){
+    e.preventDefault()
+    this.props.history.push('/launchpad')
+  }
+
   render() {
-    console.log(this.props.reviews);
-    if(!this.props.reviews.length) return null
+    if(!this.props.reviews.length) {
+      return (
+      <div>
+        <Navigation tab={'testpilots'}/>
+        <div className='container'>
+          <div>
+            <h2 className='page-title my-5'>Prototype Reviews</h2>
+          </div>
+          <p>No reviews yet</p>
+          <div className='d-flex justify-content-end'>
+            <button type='button' className="btn form-confirm-btn mr-0" onClick={(e) => this.handleBack(e)}>Back to LaunchPad</button>
+          </div>
+        </div>
+      </div>
+      )
+    }
+    const { reviews } = this.props
     return (
       <div>
         <Navigation tab={'testpilots'}/>
         <div className='container'>
-          <div className='d-flex justify-content-between align-items-center'>
+          <div>
             <h2 className='page-title my-5'>Prototype Reviews</h2>
-            <Link to='/testpilots/add'>
-              <AddButton tooltip={'Add test pilot'}/>
-            </Link>
           </div>
-          {/* <div className='row mb-5 top-row pt-1'>
-            <p className='col-2'></p>
-            <h5 className='subtitle name col-3'>Name</h5>
-            <h5 className='subtitle col-3'>Title</h5>
-            <h5 className='subtitle col-3'>Email</h5>
+          <div className='d-flex justify-content-between mb-4'>
+            <h3 className='experience-title'>{reviews[0].name}</h3>
+            <p className='experience-content-section'>{reviews[0].description}</p>
           </div>
-          {this.props.testPilots.map((pilot, index) => {
-            const { id, first_name, last_name, position, email, image } = pilot
-            return <TestPilot key={index} id={id} first_name={first_name} last_name={last_name} title={position} email={email} image={image} />
-          })} */}
+          <div className='d-flex justify-content-between review-section mb-4'>
+            {reviews.map((review, index) => {
+              return <ReviewItem key={index} review={review} />
+            })}
+          </div>
+          <div className='d-flex justify-content-end'>
+            <button type='button' className="btn form-confirm-btn mr-0" onClick={(e) => this.handleBack(e)}>Back to LaunchPad</button>
+          </div>
         </div>
       </div>
     )
