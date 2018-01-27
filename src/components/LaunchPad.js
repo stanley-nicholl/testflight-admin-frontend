@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { Header, Navigation, MultiSelect, LaunchPadItem } from './common'
+import { Header, Navigation } from './common'
+import LaunchPadItem from './common/LaunchPadItem'
 import { fetchPrototypes, fetchTestPilots, fetchReviews } from '../actions'
 
 class LaunchPad extends Component {
@@ -18,8 +19,6 @@ class LaunchPad extends Component {
   render() {
     if(!this.props.testPilots.length || !this.props.prototypes.length) return null
     const { prototypes, testPilots } = this.props
-    // console.log(prototypes, testPilots);
-
     const data = prototypes.map(prototype => {
       const testers = []
       testPilots.forEach(pilot => {
@@ -37,6 +36,7 @@ class LaunchPad extends Component {
         testers: testers
       }
     })
+
     return (
       <div>
         <Navigation tab={'launchpad'} />
@@ -47,7 +47,7 @@ class LaunchPad extends Component {
             <h5 className='subtitle ml-4'>Test Pilots</h5>
           </div>
           {data.map((prototype, index) => {
-            return <LaunchPadItem key={index} id={prototype.id} name={prototype.name} alignment={prototype.testers}  />
+            return <LaunchPadItem key={index} id={prototype.id} name={prototype.name} testers={prototype.testers}  />
           })}
         </div>
       </div>

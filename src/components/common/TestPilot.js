@@ -17,7 +17,7 @@ class TestPilot extends Component {
     const { id, first_name, last_name, title, email, image } = this.props
 
     return (
-      <div>
+      <div className='test-pilot px-3 pt-5 pb-1 mb-3'>
         <div id={`user-${id}`} className='row mb-5 align-items-center'>
           <div className=' col-2'>
             <div className='pilot-img' style={{backgroundImage: `url(${image})`}}></div>

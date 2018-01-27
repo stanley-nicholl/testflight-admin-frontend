@@ -24,9 +24,9 @@ class TestPilots extends Component {
               <AddButton tooltip={'Add test pilot'}/>
             </Link>
           </div>
-          <div className='row mb-5 top-row pt-1'>
+          <div className='row mb-4 top-row pt-1'>
             <p className='col-2'></p>
-            <h5 className='subtitle name col-3'>Name</h5>
+            <h5 className='subtitle ml-2 name col-3'>Name</h5>
             <h5 className='subtitle col-3'>Title</h5>
             <h5 className='subtitle col-3'>Email</h5>
           </div>

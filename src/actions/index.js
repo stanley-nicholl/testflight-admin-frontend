@@ -2,3 +2,4 @@
 export * from './TestPilotActions'
 export * from './PrototypesActions'
 export * from './ReviewsActions'
+export * from './AlignmentActions'

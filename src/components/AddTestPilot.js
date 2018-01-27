@@ -43,24 +43,8 @@ class AddTestPilot extends Component {
     this.props.history.push('/testpilots')
   }
 
-  onFirstNameChange(e) {
-    this.setState({ ...this.state, first_name: e.target.value })
-  }
-  onLastNameChange(e) {
-    this.setState({ ...this.state, last_name: e.target.value })
-  }
-
-  onPositionChange(e) {
-    this.setState({ ...this.state, position: e.target.value })
-  }
-
-  onEmailChange(e) {
-    this.setState({ ...this.state, email: e.target.value })
-  }
-
-  onImageChange(e) {
-    console.log(e.target.value);
-    this.setState({ ...this.state, image: e.target.value })
+  onChange(e, key){
+    this.setState({ ...this.state, [key]: e.target.value })
   }
 
   render() {
@@ -78,7 +62,7 @@ class AddTestPilot extends Component {
                 <input
                   type="text" id="test-pilot-first-name"
                   className="form-control"
-                  onChange={(e) => this.onFirstNameChange(e)}
+                  onChange={(e) => this.onChange(e, 'first_name')}
                   value={this.state.first_name}/>
                 <label htmlFor="form3">First Name</label>
               </div>
@@ -88,7 +72,7 @@ class AddTestPilot extends Component {
                 <input
                   type="text" id="test-pilot-last-name"
                   className="form-control"
-                  onChange={(e) => this.onLastNameChange(e)}
+                  onChange={(e) => this.onChange(e, 'last_name')}
                   value={this.state.last_name}/>
                 <label htmlFor="form3">Last Name</label>
               </div>
@@ -100,7 +84,7 @@ class AddTestPilot extends Component {
                 <input
                   type="text" id="test-pilot-title"
                   className="form-control"
-                  onChange={(e) => this.onPositionChange(e)}
+                  onChange={(e) => this.onChange(e, 'position')}
                   value={this.state.position}/>
                 <label htmlFor="form3">Title</label>
               </div>
@@ -110,7 +94,7 @@ class AddTestPilot extends Component {
                 <input
                   type="text" id="test-pilot-email"
                   className="form-control"
-                  onChange={(e) => this.onEmailChange(e)}
+                  onChange={(e) => this.onChange(e, 'email')}
                   value={this.state.email}/>
                 <label htmlFor="form3">Email</label>
               </div>
@@ -122,7 +106,7 @@ class AddTestPilot extends Component {
                 <input
                   type="text" id="test-pilot-image"
                   className="form-control"
-                  onChange={(e) => this.onImageChange(e)}
+                  onChange={(e) => this.onChange(e, 'image')}
                   value={this.state.image}/>
                 <label htmlFor="form8">Headshot</label>
               </div>

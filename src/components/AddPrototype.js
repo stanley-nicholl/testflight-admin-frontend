@@ -36,21 +36,8 @@ class AddPrototype extends Component {
       })
   }
 
-  handleCancel(e) {
-    e.preventDefault()
-    this.props.history.push('/prototypes')
-  }
-
-  onNameChange(e) {
-    this.setState({ ...this.state, name: e.target.value })
-  }
-
-  onDescriptionChange(e) {
-    this.setState({ ...this.state, description: e.target.value })
-  }
-
-  onUserStoryChange(e) {
-    this.setState({ ...this.state, userStory: e.target.value })
+  onChange(e, key) {
+    this.setState({ ...this.state, [key]: e.target.value })
   }
 
   render() {
@@ -67,7 +54,7 @@ class AddPrototype extends Component {
                 <input
                   type="text" id="prototype-name"
                   className="form-control"
-                  onChange={(e) => this.onNameChange(e)}
+                  onChange={(e) => this.onChange(e, 'name')}
                   value={this.state.name}/>
                 <label htmlFor="form3">Name</label>
               </div>
@@ -79,7 +66,7 @@ class AddPrototype extends Component {
                   id="prototype-description"
                   className="md-textarea"
                   maxLength='280'
-                  onChange={(e) => this.onDescriptionChange(e)}
+                  onChange={(e) => this.onChange(e, 'description')}
                   value={this.state.description}>
                 </textarea>
                 <label htmlFor="form8">Description</label>
@@ -92,7 +79,7 @@ class AddPrototype extends Component {
                   id="prototype-userStory"
                   className="md-textarea"
                   maxLength='280'
-                  onChange={(e) => this.onUserStoryChange(e)}
+                  onChange={(e) => this.onChange(e, 'userStory')}
                   value={this.state.userStory}>
                 </textarea>
                 <label htmlFor="form8">User Story</label>

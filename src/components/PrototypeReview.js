@@ -24,7 +24,7 @@ class PrototypeReview extends Component {
     if(!this.props.reviews.length) {
       return (
       <div>
-        <Navigation tab={'testpilots'}/>
+        <Navigation tab={'launchpad'}/>
         <div className='container'>
           <div>
             <h2 className='page-title my-5'>Prototype Reviews</h2>
@@ -40,7 +40,7 @@ class PrototypeReview extends Component {
     const { reviews } = this.props
     return (
       <div>
-        <Navigation tab={'testpilots'}/>
+        <Navigation tab={'launchpad'}/>
         <div className='container'>
           <div>
             <h2 className='page-title my-5'>Prototype Reviews</h2>
