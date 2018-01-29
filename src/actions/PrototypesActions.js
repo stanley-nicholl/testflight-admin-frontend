@@ -17,8 +17,7 @@ export const fetchPrototypes = () => {
 
 export const deletePrototype = (id) => {
   return async (dispatch) => {
-    const target = id.substring(10)
-    await fetch(`http://localhost:3000/api/prototypes/${target}`, {
+    await fetch(`http://localhost:3000/api/prototypes/${id}`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'

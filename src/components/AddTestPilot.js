@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { Redirect } from 'react-router-dom'
 import { Header, Navigation } from './common'
+import { addTestPilot } from '../actions'
 
 class AddTestPilot extends Component {
   constructor(props){
@@ -12,30 +13,29 @@ class AddTestPilot extends Component {
       last_name: '',
       position: '',
       email: '',
-      image: ''
+      image: '',
+      admin: false
     }
   }
 
   async handleAdd(e) {
     e.preventDefault()
-    const { first_name, last_name, position, email, image } = this.state
+    document.getElementById('formError').textContent = ''
+    const { first_name, last_name, position, email, image, admin } = this.state
     if(!first_name || !last_name || !position || !email || !image){
-      //show error
+      document.getElementById('formError').textContent = 'Name, position, email, and image required to create a new test pilot'
       return null
     }
 
-    const body = { first_name, last_name, position, email, image }
-    await fetch(`http://localhost:3000/api/users`, {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      method: 'POST',
-      body: JSON.stringify(body)
-    })
+    const body = { first_name, last_name, position, email, image, prototype_id: null, admin }
+    await this.props.addTestPilot(body)
       .then(result => {
         this.props.history.push('/testpilots')
       })
+  }
+
+  handleCheck(e) {
+    this.setState({ ...this.state, admin: e.target.value })
   }
 
   handleCancel(e) {
@@ -50,6 +50,7 @@ class AddTestPilot extends Component {
   render() {
     return (
       <div>
+        <Header user={'Stan'} />
         <Navigation tab={'testpilots'}/>
         <div className='container'>
           <h2 className='page-title my-5'>Add Test Pilot</h2>
@@ -111,9 +112,17 @@ class AddTestPilot extends Component {
                 <label htmlFor="form8">Headshot</label>
               </div>
 
-              <div className="text-right">
-                <button type='button' className="btn form-cancel-btn" onClick={(e) => this.handleCancel(e)}>Cancel</button>
-                <button type='button' className="btn form-confirm-btn" onClick={(e) => this.handleAdd(e)}>Submit</button>
+              <div id='formError' className='form-error'></div>
+
+              <div className="text-right d-flex justify-content-end">
+                <div className="form-group mr-5 admin-check">
+                  <input type="checkbox" id="adminCheckbox" onChange={(e) => this.handleCheck(e)}/>
+                  <label htmlFor="adminCheckbox">User is admin</label>
+                </div>
+                <div>
+                  <button type='button' className="btn form-cancel-btn" onClick={(e) => this.handleCancel(e)}>Cancel</button>
+                  <button type='button' className="btn form-confirm-btn" onClick={(e) => this.handleAdd(e)}>Submit</button>
+                </div>
               </div>
 
           </form>
@@ -124,4 +133,4 @@ class AddTestPilot extends Component {
   }
 }
 
-export default AddTestPilot
+export default connect(null, { addTestPilot })(AddTestPilot)

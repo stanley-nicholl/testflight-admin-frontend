@@ -20,8 +20,7 @@ export const fetchTestPilots = () => {
 
 export const deleteTestPilot = (id) => {
   return async (dispatch) => {
-    const target = id.substring(10)
-    await fetch(`http://localhost:3000/api/users/${target}`, {
+    await fetch(`http://localhost:3000/api/users/${id}`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -29,5 +28,19 @@ export const deleteTestPilot = (id) => {
       method: 'DELETE'
     })
     dispatch (fetchTestPilots())
+  }
+}
+
+export const addTestPilot = (body) => {
+  return async (dispatch) => {
+    await fetch(`http://localhost:3000/api/users`, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(body)
+    })
+    dispatch(fetchTestPilots)
   }
 }

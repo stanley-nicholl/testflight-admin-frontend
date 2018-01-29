@@ -16,9 +16,10 @@ class AddPrototype extends Component {
 
   async handleAdd(e) {
     e.preventDefault()
+    document.getElementById('formError').textContent = ''
     const { name, description, userStory } = this.state
     if(!name || !description || !userStory){
-      //show error
+      document.getElementById('formError').textContent = 'All fields required to create a new prototype'
       return null
     }
 
@@ -36,6 +37,11 @@ class AddPrototype extends Component {
       })
   }
 
+  handleCancel(e) {
+    e.preventDefault()
+    this.props.history.push('/prototypes')
+  }
+
   onChange(e, key) {
     this.setState({ ...this.state, [key]: e.target.value })
   }
@@ -43,6 +49,7 @@ class AddPrototype extends Component {
   render() {
     return (
       <div>
+        <Header user={'Stan'} />
         <Navigation tab={'prototypes'}/>
         <div className='container'>
           <h2 className='page-title my-5'>Add Prototype</h2>
@@ -84,6 +91,8 @@ class AddPrototype extends Component {
                 </textarea>
                 <label htmlFor="form8">User Story</label>
               </div>
+
+              <div id='formError' className='form-error'></div>
 
               <div className="text-right">
                 <button type='button' className="btn form-cancel-btn" onClick={(e) => this.handleCancel(e)}>Cancel</button>

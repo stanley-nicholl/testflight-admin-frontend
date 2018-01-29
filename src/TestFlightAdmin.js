@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import LaunchPad from './components/LaunchPad'
+import SignIn from './components/SignIn'
 import TestPilots from './components/TestPilots'
 import AddTestPilot from './components/AddTestPilot'
 import Prototypes from './components/Prototypes'
@@ -18,10 +18,10 @@ class TestFlightAdmin extends Component {
   render() {
     return (
       <div>
-        <Header user={'Stan'} />
+        {/* <Header user={'Stan'} /> */}
         <Router>
           <div>
-            <Route exact path='/launchpad' component={LaunchPad} />
+            <Route exact path='/' component={SignIn} />
             <Route path={`/prototype/review/:id`} component={PrototypeReview} />
             <Route exact path='/testpilots' component={TestPilots} />
             <Route exact path='/testpilots/add' component={AddTestPilot} />

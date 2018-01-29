@@ -17,13 +17,14 @@ class PrototypeReview extends Component {
 
   handleBack(e){
     e.preventDefault()
-    this.props.history.push('/launchpad')
+    this.props.history.push('/prototypes')
   }
 
   render() {
     if(!this.props.reviews.length) {
       return (
       <div>
+        <Header user={'Stan'} />
         <Navigation tab={'launchpad'}/>
         <div className='container'>
           <div>
