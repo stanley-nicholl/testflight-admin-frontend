@@ -5,7 +5,7 @@ import {
 export const fetchTestPilots = () => {
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')
-    const data = await fetch(`http://localhost:3000/api/users`, {
+    const data = await fetch(`${process.env.REACT_APP_TESTFLIGHT_API_URL}/users`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export const fetchTestPilots = () => {
 export const deleteTestPilot = (id) => {
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')
-    await fetch(`http://localhost:3000/api/users/${id}`, {
+    await fetch(`${process.env.REACT_APP_TESTFLIGHT_API_URL}/users/${id}`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -41,9 +41,10 @@ export const deleteTestPilot = (id) => {
 }
 
 export const addTestPilot = (body) => {
+  console.log('addTestPilot');
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')
-    await fetch(`http://localhost:3000/api/users`, {
+    await fetch(`${process.env.REACT_APP_TESTFLIGHT_API_URL}/users`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',

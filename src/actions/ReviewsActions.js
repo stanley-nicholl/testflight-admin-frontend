@@ -5,7 +5,7 @@ import {
 export const fetchReviews = (id) => {
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')
-    const data = await fetch(`http://localhost:3000/api/prototypes/${id}/reviews`, {
+    const data = await fetch(`${process.env.REACT_APP_TESTFLIGHT_API_URL}/prototypes/${id}/reviews`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',

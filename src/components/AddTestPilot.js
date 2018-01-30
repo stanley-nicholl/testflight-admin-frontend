@@ -19,6 +19,7 @@ class AddTestPilot extends Component {
 
   async handleAdd(e) {
     e.preventDefault()
+    console.log(this.props);
     document.getElementById('formError').textContent = ''
     const { first_name, last_name, position, email, image, admin } = this.state
     if(!first_name || !last_name || !position || !email || !image){

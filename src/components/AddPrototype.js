@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Navigation } from './common'
 import Header from './common/Header'
+import { addPrototype } from '../actions'
 
 class AddPrototype extends Component {
   constructor(props){
@@ -22,17 +24,11 @@ class AddPrototype extends Component {
     }
 
     const body = { name, description, userStory }
-    await fetch(`http://localhost:3000/api/prototypes`, {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      method: 'POST',
-      body: JSON.stringify(body)
-    })
+    await this.props.addPrototype(body)
       .then(result => {
         this.props.history.push('/prototypes')
       })
+
   }
 
   handleCancel(e) {
@@ -105,4 +101,4 @@ class AddPrototype extends Component {
   }
 }
 
-export default AddPrototype
+export default connect(null, { addPrototype })(AddPrototype)

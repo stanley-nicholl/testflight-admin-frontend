@@ -5,7 +5,7 @@ import {
 export const fetchPrototypes = () => {
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')
-    const data = await fetch(`http://localhost:3000/api/prototypes`, {
+    const data = await fetch(`${process.env.REACT_APP_TESTFLIGHT_API_URL}/prototypes`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -22,10 +22,25 @@ export const fetchPrototypes = () => {
   }
 }
 
+export const addPrototype = (body) => {
+  return async (dispatch) => {
+    const token = await window.localStorage.getItem('testFlightToken')
+    await fetch(`${process.env.REACT_APP_TESTFLIGHT_API_URL}/prototypes`, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      method: 'POST',
+      body: JSON.stringify(body)
+    })
+  }
+}
+
 export const deletePrototype = (id) => {
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')
-    await fetch(`http://localhost:3000/api/prototypes/${id}`, {
+    await fetch(`${process.env.REACT_APP_TESTFLIGHT_API_URL}/prototypes/${id}`, {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',

@@ -12,37 +12,29 @@ import AddPrototype from './components/AddPrototype'
 import { Header, Navigation, Footer } from './components/common'
 
 
+const isPrivate = ({ isAuthenticated }, Component) => {
+  return (props) => isAuthenticated ? <Component {...props} /> : <Redirect to="/"/>
+}
 
 class TestFlightAdmin extends Component {
 
   componentDidMount = async () => {
     const token = await window.localStorage.getItem('testFlightToken')
-    if(token) this.props.authenticateUser(token)
+    if(token) await this.props.authenticateUser(token)
   }
 
   render() {
-    if(!this.props.auth.isAuthenticated){
-      return (
-        <div>
-          <Router>
-            <div>
-              <Route path='/' component={SignIn} />
-            </div>
-          </Router>
-        </div>
-      )
-    }
     return (
       <div>
         <Router>
           <div>
-            {/* <Route exact path='/signin' component={SignIn} /> */}
-            <Route exact path='/testpilots' component={TestPilots} />
-            <Route exact path='/testpilots/add' component={AddTestPilot} />
-            <Route exact path='/prototypes' component={Prototypes} />
-            <Route exact path='/prototypes/add' component={AddPrototype} />
-            <Route path={`/prototype/review/:id`} component={PrototypeReview} />
-            {/* <Route path={'/prototypes'} component={ (props) => <Prototypes { ...props } auth={this.props.auth.isAuthenticated} /> } /> */}
+            <Route path='/' component={() => this.props.auth.isAuthenticated ?
+              <Redirect to="/testpilots"/> : <SignIn auth={this.props.auth}/>} />
+            <Route exact path='/testpilots' component={ isPrivate(this.props.auth, TestPilots) } />
+            <Route exact path='/testpilots/add' component={ isPrivate(this.props.auth, AddTestPilot) } />
+            <Route exact path='/prototypes' component={ isPrivate(this.props.auth, Prototypes) } />
+            <Route exact path='/prototypes/add' component={ isPrivate(this.props.auth, AddPrototype) } />
+            <Route path={`/prototype/review/:id`} component={ isPrivate(this.props.auth, PrototypeReview) } />
           </div>
         </Router>
       </div>

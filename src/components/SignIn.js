@@ -14,16 +14,7 @@ class SignIn extends Component {
       password: e.target.password.value,
     }
 
-    // if(this.props.user.id) {
-    //   return <Redirect to="/testpilots" />
-    // }
     await this.props.signInUser(payload)
-      .then(result => {
-        console.log('test');
-        <Redirect to="/testpilots" />
-      })
-
-
   }
 
   render() {

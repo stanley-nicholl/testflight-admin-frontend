@@ -21,7 +21,6 @@ class Prototypes extends Component {
   }
 
   deletePrototype() {
-    console.log('test');
     const id = this.state.deleteTarget
     this.props.deletePrototype(id)
     window.$('#prototpyeModal').modal('toggle')
