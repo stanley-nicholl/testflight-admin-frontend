@@ -17,7 +17,6 @@ export const signInUser = (payload) => {
 
     const user = await res.json()
     window.localStorage.setItem('testFlightToken', user.Auth)
-    console.log(user);
     const data = { name: user.name, isAuthenticated: true}
     // console.log(data);
 
@@ -52,7 +51,6 @@ export const authenticateUser = (token) => {
 
 
 export function logUserOut() {
-  console.log('test');
   return async (dispatch) => {
 
     await window.localStorage.removeItem('testFlightToken')

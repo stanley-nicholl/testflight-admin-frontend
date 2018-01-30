@@ -8,7 +8,7 @@ const ReviewItem = ({ review }) => {
   }
 
   return (
-    <div className='d-flex review py-4 px-4'>
+    <div className='d-flex review py-4 px-4 mb-4'>
       <div className='reviewer mr-5'>
         <h5 className='font-weigth-bold reviewer-name mb-5'>{`${first_name} ${last_name}`}</h5>
         <div className=' col-2'>

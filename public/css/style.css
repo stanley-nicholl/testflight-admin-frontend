@@ -280,6 +280,10 @@ textarea:focus {
   font-size: 1.1rem;
 }
 
+.review-section {
+  flex-wrap: wrap;
+}
+
 .review {
   width: 48%;
   -webkit-box-shadow: 2px 2px 6px 0px rgba(37, 50, 79, 1);

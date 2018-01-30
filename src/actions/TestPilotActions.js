@@ -41,7 +41,6 @@ export const deleteTestPilot = (id) => {
 }
 
 export const addTestPilot = (body) => {
-  console.log('addTestPilot');
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')
     await fetch(`${process.env.REACT_APP_TESTFLIGHT_API_URL}/users`, {
