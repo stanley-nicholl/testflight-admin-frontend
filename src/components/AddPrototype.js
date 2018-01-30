@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { Redirect } from 'react-router-dom'
-import { Header, Navigation } from './common'
+import { Navigation } from './common'
+import Header from './common/Header'
 
 class AddPrototype extends Component {
   constructor(props){
@@ -49,7 +47,7 @@ class AddPrototype extends Component {
   render() {
     return (
       <div>
-        <Header user={'Stan'} />
+        <Header />
         <Navigation tab={'prototypes'}/>
         <div className='container'>
           <h2 className='page-title my-5'>Add Prototype</h2>

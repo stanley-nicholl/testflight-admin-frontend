@@ -1,14 +1,10 @@
 import React, { Component } from 'react'
 import { DeleteButton } from './DeleteButton'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import { deletePrototype } from '../../actions'
 
 class PrototypeItem extends Component {
-  constructor(props){
-    super(props)
-  }
 
   deleteProto(id) {
     this.props.deletePrototype(id)

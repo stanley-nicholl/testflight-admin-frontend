@@ -20,11 +20,11 @@ const ReviewItem = ({ review }) => {
           <div  className='d-flex mb-3'>
             <div className='mr-5'>
               <p className='review-content-title'>Pain/Gain</p>
-              <img className='thumb' src={handleThumbImage(painGain)} />
+              <img className='thumb' src={handleThumbImage(painGain)} alt='thumb representing feedback for pain/gain' />
             </div>
             <div>
               <p className='review-content-title'>Simple</p>
-              <img className='thumb' src={handleThumbImage(simple)} />
+              <img className='thumb' src={handleThumbImage(simple)} alt='thumb representing feedback for simplicity'/>
             </div>
           </div>
           <div>

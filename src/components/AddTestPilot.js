@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { Redirect } from 'react-router-dom'
-import { Header, Navigation } from './common'
+import { Navigation } from './common'
+import Header from './common/Header'
 import { addTestPilot } from '../actions'
 
 class AddTestPilot extends Component {
@@ -50,7 +49,7 @@ class AddTestPilot extends Component {
   render() {
     return (
       <div>
-        <Header user={'Stan'} />
+        <Header />
         <Navigation tab={'testpilots'}/>
         <div className='container'>
           <h2 className='page-title my-5'>Add Test Pilot</h2>

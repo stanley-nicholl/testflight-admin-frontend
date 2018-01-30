@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { fetchReviews } from '../actions'
-import { Header, Navigation, AddButton, ReviewItem } from './common'
+import { Navigation, AddButton, ReviewItem } from './common'
+import Header from './common/Header'
 
 class PrototypeReview extends Component {
   constructor(props){
@@ -24,7 +24,7 @@ class PrototypeReview extends Component {
     if(!this.props.reviews.length) {
       return (
       <div>
-        <Header user={'Stan'} />
+        <Header />
         <Navigation tab={'launchpad'}/>
         <div className='container'>
           <div>

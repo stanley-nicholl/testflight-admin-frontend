@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
-import { Header, Navigation, AddButton } from './common'
+import Header from './common/Header'
+import { Navigation, AddButton } from './common'
 import TestPilot from './common/TestPilot'
 import { fetchTestPilots, deleteTestPilot } from '../actions'
 
@@ -35,7 +35,7 @@ class TestPilots extends Component {
     if(!this.props.testPilots.length) return null
     return (
       <div>
-        <Header user={'Stan'} />
+        <Header />
         <Navigation tab={'testpilots'}/>
         <div className='container'>
           <div className='d-flex justify-content-between align-items-center'>
@@ -57,10 +57,6 @@ class TestPilots extends Component {
             const { id, first_name, last_name, position, email, image, prototype_id } = pilot
             return <TestPilot key={index} id={id} first_name={first_name} last_name={last_name} title={position} email={email} image={image} prototype={prototype_id} deleteModal={(id) => this.deleteModal(id)}/>
           })}
-          {/* {this.props.testPilots.map((pilot, index) => {
-            const { id, first_name, last_name, position, email, image, prototype_id } = pilot
-            return <TestPilot key={index} id={id} first_name={first_name} last_name={last_name} title={position} email={email} image={image} prototype={prototype_id} deleteModal={(id) => this.deleteModal(id)}/>
-          })} */}
         </div>
 
         <div className="modal fade bottom" id="TestPilotModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

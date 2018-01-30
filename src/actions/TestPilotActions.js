@@ -20,6 +20,7 @@ export const fetchTestPilots = () => {
 
 export const deleteTestPilot = (id) => {
   return async (dispatch) => {
+    // const token = localStorage.getItem('testFlightToken')
     await fetch(`http://localhost:3000/api/users/${id}`, {
       headers: {
         'Accept': 'application/json',

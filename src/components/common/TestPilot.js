@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { DeleteButton } from './DeleteButton'
 import { connect } from 'react-redux'
 import Select from './Select'
-import { bindActionCreators } from 'redux'
 import { deleteTestPilot } from '../../actions'
 
 class TestPilot extends Component {

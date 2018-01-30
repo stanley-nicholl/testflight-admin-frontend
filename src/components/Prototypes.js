@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
-import { Header, Navigation, MultiSelect, AddButton } from './common'
+import { Navigation, AddButton } from './common'
+import Header from './common/Header'
 import PrototypeItem from './common/PrototypeItem'
 import { fetchPrototypes, deletePrototype } from '../actions'
 
@@ -36,7 +36,7 @@ class Prototypes extends Component {
     if(!this.props.prototypes.length) return null
     return (
       <div>
-        <Header user={'Stan'} />
+        <Header />
         <Navigation tab={'prototypes'}/>
         <div className='container'>
           <div className='d-flex justify-content-between align-items-center'>

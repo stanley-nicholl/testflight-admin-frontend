@@ -1,4 +1,6 @@
 export const FETCH_PROTOTYPES = 'fetch_prototypes'
 export const FETCH_PILOTS = 'fetch_pilots'
 export const FETCH_REVIEWS = 'fetch_reviews'
-export const SET_ALIGNMENT = 'set_aligment'
+export const SIGNIN_USER = 'signin_user'
+export const FETCH_USER = 'fetch_user'
+export const LOGOUT_USER = 'logout_user'
