@@ -34,10 +34,10 @@ export const authenticateUser = (token) => {
         'Authorization': `Bearer ${token}`
       }
     })
-    if(!res){
+    if(res){
       const json = await res.json()
       const data = { name: json.User.first_name, isAuthenticated: true}
-
+      console.log(data);
       dispatch({
         type: FETCH_USER,
         payload: data
@@ -51,12 +51,12 @@ export const authenticateUser = (token) => {
 
 
 export function logUserOut() {
-  // return async (dispatch) => {
-  //
-  //   window.localStorage.removeItem('askifyToken')
-  //
-  //   dispatch({
-  //     type: LOGOUT_USER
-  //   })
-  // }
+  return async (dispatch) => {
+
+    window.localStorage.removeItem('askifyToken')
+
+    dispatch({
+      type: LOGOUT_USER
+    })
+  }
 }

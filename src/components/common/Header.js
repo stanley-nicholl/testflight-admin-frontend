@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { logUserOut } from '../../actions'
 
 class Header extends Component {
-  state={
-    name: ''
-  }
 
   componentDidMount() {
     this.setState({ name: this.props.auth.name })
   }
 
+  logOut() {
+    this.props.logUserOut()
+  }
 
   render() {
     return (
@@ -24,7 +25,7 @@ class Header extends Component {
           </div>
           <div className='d-flex'>
             <p className='text-white mb-0 pb-1 mr-3'>Hello, {this.props.auth.name}</p>
-            <a className='text-white log-out'>Log Out</a>
+            <a className='text-white log-out' onClick={() => this.logOut()}>Log Out</a>
           </div>
         </div>
       </div>
@@ -36,4 +37,4 @@ const mapStateToProps = state => {
   return { auth: state.auth }
 }
 
-export default connect(mapStateToProps, null)(Header)
+export default connect(mapStateToProps, { logUserOut })(Header)

@@ -41,6 +41,7 @@ class PrototypeReview extends Component {
     const { reviews } = this.props
     return (
       <div>
+        <Header />
         <Navigation tab={'launchpad'}/>
         <div className='container'>
           <div>

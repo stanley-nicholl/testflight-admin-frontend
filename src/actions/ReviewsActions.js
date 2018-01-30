@@ -4,7 +4,14 @@ import {
 
 export const fetchReviews = (id) => {
   return async (dispatch) => {
-    const data = await fetch(`http://localhost:3000/api/prototypes/${id}/reviews`)
+    const token = await window.localStorage.getItem('testFlightToken')
+    const data = await fetch(`http://localhost:3000/api/prototypes/${id}/reviews`, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      }
+    })
     const reviews = await data.json()
      dispatch(
       {
