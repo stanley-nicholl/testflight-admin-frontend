@@ -35,8 +35,19 @@ h1, h2, h3, h4, h5, p, small, a, span {
   transform: rotate(25deg);
 }
 
+.greeting-section {
+  width: 25%;
+}
+
+.greeting {
+  width: 70%;
+  text-align: right;
+}
+
 .log-out {
   text-decoration: underline !important;
+  width: 35%;
+  text-align: right;
 }
 
 /* HEADER HEADER - END */

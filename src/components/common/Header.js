@@ -23,8 +23,8 @@ class Header extends Component {
               <small className='text-white ml-1 mt-0 pt-0'>mission control for your innovation launchpad</small>
             </div>
           </div>
-          <div className='d-flex'>
-            <p className='text-white mb-0 pb-1 mr-3'>Hello, {this.props.auth.name}</p>
+          <div className='d-flex greeting-section justify-content-end'>
+            <p className='text-white mb-0 pb-1 mr-3 greeting'>Hello, {this.props.auth.name}</p>
             <a className='text-white log-out' onClick={() => this.logOut()}>Log Out</a>
           </div>
         </div>
