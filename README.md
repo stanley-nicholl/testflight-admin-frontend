@@ -9,7 +9,7 @@
 * Remove all points of friction for executives to view the experience
 * Obtain immediate feedback on each experience from your testers
 
-[<img src="https://imgur.com/Q2Ma1zW">](https://vimeo.com/254016493)
+[<img src="https://i.imgur.com/Q2Ma1zW.png">](https://vimeo.com/254016493)
 
 
 ## Installation
