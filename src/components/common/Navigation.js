@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 class Navigation extends Component {
 
+  // enables toggling between two tabs
   componentDidMount(){
     const testpilots = document.getElementById('tab-1')
     const prototypes = document.getElementById('tab-2')
@@ -23,9 +24,11 @@ class Navigation extends Component {
   render() {
     return (
       <div className='tab-section'>
+
         <div className="tab-wrap container">
 
           <input type="radio" name="tabs" id="tab1" />
+          
           <div className="tab-label-content d-flex flex-column" id="tab-1">
             <Link to='/testpilots'>
               <div id='tab-testpilots' className='mt-3 tab-label'>TEST PILOTS</div>
@@ -33,6 +36,7 @@ class Navigation extends Component {
           </div>
 
           <input type="radio" name="tabs" id="tab2" />
+
           <div className="tab-label-content d-flex flex-column" id="tab-2">
             <Link to='/prototypes'>
               <div id='tab-prototypes' className='mt-3 tab-label'>PROTOTYPES</div>

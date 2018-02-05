@@ -36,14 +36,18 @@ class TestPilots extends Component {
     return (
       <div>
         <Header />
+
         <Navigation tab={'testpilots'}/>
+
         <div className='container'>
+
           <div className='d-flex justify-content-between align-items-center'>
             <h2 className='page-title my-5'>Test Pilots</h2>
             <Link to='/testpilots/add'>
               <AddButton tooltip={'Add test pilot'}/>
             </Link>
           </div>
+
           <div className='row mb-4 top-row pt-1'>
             <p className='col-1'></p>
             <h5 className='subtitle ml-1 name col-2'>Name</h5>
@@ -51,23 +55,29 @@ class TestPilots extends Component {
             <h5 className='subtitle col-3'>Email</h5>
             <h5 className='subtitle col-3'>Assigned Prototype</h5>
           </div>
+          {/* build list of test pilots */}
           {this.props.testPilots.sort((a,b) => {
             return a.id - b.id
           }).map((pilot, index) => {
             const { id, first_name, last_name, position, email, image, prototype_id } = pilot
             return <TestPilot key={index} id={id} first_name={first_name} last_name={last_name} title={position} email={email} image={image} prototype={prototype_id} deleteModal={(id) => this.deleteModal(id)}/>
           })}
+
         </div>
 
         <div className="modal fade bottom" id="TestPilotModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
           <div className="modal-dialog modal-frame modal-bottom" role="document">
+
             <div className="modal-content">
+
               <div className="modal-header">
                 <h5 className="modal-title" id="exampleModalLabel">Are you sure you sure you want to delete this test pilot?</h5>
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+
               <div className="modal-footer">
                 <button type="button" className="btn btn-cancel-modal" data-dismiss="modal" onClick={() => this.cancelModal()}>cancel</button>
                 <button type="button" className="btn btn-delete-modal"onClick={() => this.deletePilot()}>Delete Pilot</button>

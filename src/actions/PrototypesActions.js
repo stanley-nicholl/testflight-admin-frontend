@@ -2,6 +2,8 @@ import {
   FETCH_PROTOTYPES
 } from './types'
 
+
+//gets all prototypes and related data
 export const fetchPrototypes = () => {
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')
@@ -22,6 +24,7 @@ export const fetchPrototypes = () => {
   }
 }
 
+//adds prototype to db
 export const addPrototype = (body) => {
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')
@@ -37,6 +40,7 @@ export const addPrototype = (body) => {
   }
 }
 
+//removes prototype from db
 export const deletePrototype = (id) => {
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')

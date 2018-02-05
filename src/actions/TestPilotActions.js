@@ -2,6 +2,7 @@ import {
   FETCH_PILOTS
 } from './types'
 
+//grabs all test pilots
 export const fetchTestPilots = () => {
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')
@@ -25,6 +26,7 @@ export const fetchTestPilots = () => {
   }
 }
 
+//remove one test pilot from db
 export const deleteTestPilot = (id) => {
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')
@@ -40,6 +42,7 @@ export const deleteTestPilot = (id) => {
   }
 }
 
+//add one test pilot from db
 export const addTestPilot = (body) => {
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')

@@ -1,3 +1,5 @@
+// action to align test pilot to specific prototype experience
+
 export const updateAlignment = (prototype, id) => {
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')

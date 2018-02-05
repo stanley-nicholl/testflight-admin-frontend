@@ -2,6 +2,7 @@ import {
   FETCH_REVIEWS
 } from './types'
 
+//grabs all reviews for a particular prototype
 export const fetchReviews = (id) => {
   return async (dispatch) => {
     const token = await window.localStorage.getItem('testFlightToken')

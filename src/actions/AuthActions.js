@@ -4,6 +4,8 @@ import {
   LOGOUT_USER
 } from './types'
 
+// signs in user, setting a local variable
+
 export const signInUser = (payload) => {
   return async (dispatch) => {
     const res = await fetch(`${process.env.REACT_APP_TESTFLIGHT_API_URL}/auth/signin`, {
@@ -28,6 +30,8 @@ export const signInUser = (payload) => {
   }
 }
 
+// ensuring a user is who they say they are
+
 export const authenticateUser = (token) => {
   return async (dispatch) => {
     const res = await fetch(`${process.env.REACT_APP_TESTFLIGHT_API_URL}/users/fromtoken`, {
@@ -49,6 +53,7 @@ export const authenticateUser = (token) => {
   }
 }
 
+// simply logs user out by deleting local token
 
 export function logUserOut() {
   return async (dispatch) => {
