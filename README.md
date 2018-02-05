@@ -11,6 +11,11 @@
 * Remove all points of friction for executives to view the experience
 * Obtain immediate feedback on each experience from your testers
 
+To login to the admin tool:
+email: admin@admin.com
+password: password
+
+(I know, super secure)
 
 ## Installation
 
